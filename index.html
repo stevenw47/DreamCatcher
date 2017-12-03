@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Steven</title>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="predict.js"></script>
+  <script type="text/javascript" src="keys.js"></script>
+  <script type="text/javascript" src="https://sdk.clarifai.com/js/clarifai-latest.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<input type="hidden" id="hidden-counter" name="hidden-counter" value="1"/>
+	<div>
+		<input type="text" id="imgurl" placeholder="Image URL" size="80"/>
+		<br>
+		<button onclick="
+			if(imgurl.value == '') { 
+				alert('Please enter an image URL!'); 
+				return;
+			}
+			else if (!validFile(imgurl.value)) {
+				alert('Supported File Types: JPEG, PNG, TIFF, BMP');
+				return;
+			}
+			predict_click($('#imgurl').val(), 'url');" style="width:112px">
+		Predict a URL!</button>
+		
+		<br/><br/>
+		
+		<input type="file" id="filename" placeholder="Filename" size="80"/>
+		<br>
+		<button onclick="
+			if(filename.value == '') { 
+				alert('Please browse for a file!'); 
+				return;
+			}
+			else if (!validFile(filename.value)) {
+				alert('Supported File Types: JPEG, PNG, TIFF, BMP');
+				return;
+			}
+			predict_click($('#filename').val(), 'file');">
+		Predict a local file!</button>
+	</div>
+
+	<div id="predictions">
+		<div style="margin-top:30px; margin-left:20px; margin-bottom:30px; clear:left; float:left">
+			<img id="img_preview1" src="" width="400"/>
+			<br/>
+		</div>
+		<div id="concepts" class="conceptBox">
+		</div>
+	</div>
+
+</body>
+</html>
