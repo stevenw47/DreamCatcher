@@ -21,6 +21,7 @@ $(document).ready( function() {
 	// adds strings of the div ids
 	divNames.push("#main-div");
 	divNames.push("#how-it-works-div");
+	divNames.push("#faq-div");
 
 	hideAllDivs(divNames);
 

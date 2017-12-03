@@ -17,7 +17,7 @@
 	<input type="hidden" id="hidden-counter" name="hidden-counter" value="1"/>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#"><i class="fa fa-lg fa-bed"></i> DreamCatcher</a>
+		<a class="navbar-brand" href="#" onclick="event.preventDefault();"><i class="fa fa-lg fa-bed"></i> DreamCatcher</a>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
@@ -25,6 +25,9 @@
 				</li>
 				<li class="nav-item">
 					<a class="nav-link black-text" href="#" onclick="displayDiv(1)"><i class="fa fa-book"></i> How it Works</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link black-text" href="#" onclick="displayDiv(2)"><i class="fa fa-question"></i> FAQ</a>
 				</li>
 			</ul>
 			<ul class="navbar-nav ml-auto">
@@ -101,7 +104,26 @@
 	</div>
 
 	<div id="how-it-works-div">
-		<h1>it doesnt lol</h1>
+		<h1>So How Does DreamCatcher Work?</h1>
+		<p>
+			Honestly, we don't know either. <br>
+			:/ <br>
+			All jokes aside (or was that not a joke), we first scraped images of people who are awake (engaged) and people who are asleep (sleeping) from Google Images. With those images, we used Clarifai's Image Recognition API to train our own model that tries to detect whether a person is awake or not. We also augmented our collection of images with pictures of hackers at YHack 2017 who volunteered to contribute their face to our collection (So thank you to those people).
+		</p>
+	</div>
+
+	<div id="faq-div">
+		<h2>Why Detect If Someone Is Sleeping or Engaged?</h2>
+		<p>
+			At many universities, it is very important to get feedback on how well a professor taught his/her class. One way we wanted to measure this was by seeing how many people were engaged. 
+		</p>
+
+		<h2>Can This Be Improved/Expanded?</h2>
+		<p>
+			Absolutely! First and foremost, we can improve our accuracy of detecting whether someone is engaged or awake by having a larger dataset to work with. Unfortunately, it is very time consuming for us to collect a lot of usable images. Once we are able to train our model better, we hope to achieve a 90%+ accuracy rate. <br>
+			<br>
+			Being able to <strong>reliably</strong> detect whether a person is asleep or not can be very useful in other domains of the world. For example, if cars were able to detect whether a driver is asleep or not, it can hopefully alert the driver or the passengers so that no danger will arise.
+		</p>
 	</div>
 
 </body>

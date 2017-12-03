@@ -6,12 +6,7 @@ body {
 	color: black !important;
 }
 
-#main-div {
-	text-align: center;
-	margin: 30px 50px 30px 50px;
-}
-
-#how-it-works-div {
+#main-div, #how-it-works-div, #faq-div {
 	text-align: center;
 	margin: 30px 50px 30px 50px;
 }
