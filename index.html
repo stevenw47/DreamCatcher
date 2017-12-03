@@ -17,14 +17,14 @@
 	<input type="hidden" id="hidden-counter" name="hidden-counter" value="1"/>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">DreamCatcher</a>
+		<a class="navbar-brand" href="#"><i class="fa fa-lg fa-bed"></i> DreamCatcher</a>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
-					<a class="nav-link black-text" href="#"><i class="fa fa-home"></i>Home</a>
+					<a class="nav-link black-text" href="#"><i class="fa fa-home"></i> Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link black-text" href="#"><i class="fa fa-book"></i>How it Works</a>
+					<a class="nav-link black-text" href="#"><i class="fa fa-book"></i> How it Works</a>
 				</li>
 			</ul>
 			<ul class="navbar-nav ml-auto">
@@ -32,7 +32,7 @@
 					<a class="nav-link" href="#"><i class="fa fa-lg fa-github"></i></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Made at <i class="fa fa-yahoo" style="color: lightblue"></i>Hack 2017</a>
+					<a class="nav-link" href="https://www.yhack.org" target="_blank">Made with <i class="fa fa-heart" style="color: red"></i> at <i class="fa fa-yahoo" style="color: #44A0FC"></i>Hack 2017</a>
 				</li>
 			</ul>
 		</div>
@@ -66,8 +66,8 @@
 		</label>
 		-->
 
-		<label class="btn btn-info" for="filename">
-			<input id="filename" type="file" style="display:none; background-color: red;" 
+		<label class="btn btn-sm btn-light" for="filename">
+			<input id="filename" type="file" style="display:none;" 
 			onchange="$('#upload-file-info').html(this.files[0].name)">
 		Select a file!
 		</label>
@@ -87,15 +87,17 @@
 			}
 			predict_click($('#filename').val(), 'file');">
 		Predict a local file!</button>
-	</div>
 
-	<div id="predictions">
-		<div style="margin-top:30px; margin-left:20px; margin-bottom:30px; clear:left; float:left">
-			<img id="img_preview1" src="" width="400"/>
-			<br/>
+		<div id="predictions">
+			<div style="margin-top:30px; margin-left:20px; margin-bottom:30px; clear:left; float:left">
+				<img id="img_preview1" src="" width="400"/>
+				<br/>
+			</div>
+			<div id="concepts" class="conceptBox">
+				
+			</div>
 		</div>
-		<div id="concepts" class="conceptBox">
-		</div>
+		
 	</div>
 
 </body>
