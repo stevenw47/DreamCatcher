@@ -11,6 +11,11 @@ body {
 	margin: 30px 50px 30px 50px;
 }
 
+#how-it-works-div {
+	text-align: center;
+	margin: 30px 50px 30px 50px;
+}
+
 #imgurl {
 	width: 50%;
 	margin: auto;
