@@ -60,17 +60,6 @@
 		
 		<br/><br/>
 
-		<!--
-		<input type="file" id="filename" placeholder="Filename" size="80"/>
-		-->
-		<br>
-		<!--
-		<label class="custom-file" style="text-align: left;">
-			<input type="file" id="filename" class="custom-file-input">
-			<span class="custom-file-control"></span>
-		</label>
-		-->
-
 		<label class="btn btn-sm btn-light" for="filename">
 			<input id="filename" type="file" style="display:none;" 
 			onchange="$('#upload-file-info').html(this.files[0].name)">
@@ -106,7 +95,7 @@
 	</div>
 
 	<div id="how-it-works-div">
-		<h1>So How Does DreamCatcher Work?</h1>
+		<h1><strong>So How Does DreamCatcher Work?</strong></h1>
 		<p>
 			Honestly, we don't know either. <br>
 			:/ <br>
@@ -115,12 +104,16 @@
 	</div>
 
 	<div id="faq-div">
-		<h2>Why Detect If Someone Is Sleeping or Engaged?</h2>
+		<h2><strong>What Does DreamCatcher Do?</strong></h2>
+		<p>
+			It (tries to) detect whether someone is awake (engaged) or asleep (sleeping) in an image.
+		</p>
+		<h2><strong>But Why?</strong></h2>
 		<p>
 			At many universities, it is very important to get feedback on how well a professor taught his/her class. One way we wanted to measure this was by seeing how many people were engaged. 
 		</p>
 
-		<h2>Can This Be Improved/Expanded?</h2>
+		<h2><strong>Can This Be Improved/Expanded?</strong></h2>
 		<p>
 			Absolutely! First and foremost, we can improve our accuracy of detecting whether someone is engaged or awake by having a larger dataset to work with. Unfortunately, it is very time consuming for us to collect a lot of usable images. Once we are able to train our model better, we hope to achieve a 90%+ accuracy rate. <br>
 			<br>
