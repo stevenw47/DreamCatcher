@@ -2,14 +2,36 @@ body {
 	background-color: #b2ebf2;
 }
 
-#main-div {
-	margin: 20px;
+.black-text {
+	color: black !important;
 }
-		
-		.conceptBox {
-			float:left; 
-			margin-left:40px; 
-			margin-top:15px;
-			margin-bottom:30px;
-			height:100%;
-		}
+
+#main-div {
+	text-align: center;
+	margin: 30px 50px 30px 50px;
+}
+
+#imgurl {
+	width: 50%;
+	margin: auto;
+}
+
+/*
+. is class
+# is id
+*/
+#url-button {
+	margin: 10px;
+}
+
+#link-button {
+	margin: 10px;
+}
+
+.conceptBox {
+	float:left; 
+	margin-left:40px; 
+	margin-top:15px;
+	margin-bottom:30px;
+	height:100%;
+}

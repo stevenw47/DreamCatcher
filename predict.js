@@ -62,6 +62,8 @@ function doPredict(value) {
       var modelName = response.rawData.outputs[0].model.name;
       var modelNameShort = modelName.split("-")[0];
       var modelHeader = '<b><span style="font-size:14px">' + capitalize(modelNameShort) + ' Model</span></b>';
+      // removes "My Model" text from appearing
+      modelHeader = "";
       
       // Check for regions models first
       if(response.rawData.outputs[0].data.hasOwnProperty("regions")) {
