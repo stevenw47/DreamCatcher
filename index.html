@@ -108,7 +108,7 @@
 		<p>
 			Honestly, we don't know either. <br>
 			:/ <br>
-			All jokes aside (or was that not a joke), we first scraped images of people who are awake (engaged) and people who are asleep (sleeping) from Google Images. With those images, we used Clarifai's Image Recognition API to train our own model that tries to detect whether a person is awake or not. We also augmented our collection of images with pictures of hackers at YHack 2017 who volunteered to contribute their face to our collection (So thank you to those people).
+			All jokes aside (or was that not a joke?), we first scraped images of people who are awake (engaged) and people who are asleep (sleeping) from Google Images. With those images, we used Clarifai's Image Recognition API to train our own model that tries to detect whether a person is awake or not. We also augmented our collection of images with pictures of hackers at YHack 2017 who volunteered to contribute their face to our collection (So thank you to those people). To then detect whether an image is classified as engaged or sleeping, we feed that image to our model and it returns a number from 0-1 on what it thinks this image should be classified as.
 		</p>
 	</div>
 

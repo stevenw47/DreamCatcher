@@ -26,7 +26,7 @@ $(document).ready( function() {
 	hideAllDivs(divNames);
 
 	// show main-div
-	$(divNames[0]).show();
+	$(divNames[0]).fadeIn();
 
 	$(':file').on('fileselect', function(event, numFiles, label) {
 			console.log(numFiles);
@@ -38,7 +38,7 @@ $(document).ready( function() {
 function displayDiv(num){
 	event.preventDefault();
 	hideAllDivs(divNames);
-	$(divNames[num]).show();
+	$(divNames[num]).fadeIn(700);
 };
 
 // hide all divs
