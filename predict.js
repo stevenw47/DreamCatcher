@@ -63,7 +63,7 @@ function doPredict(value) {
       var modelNameShort = modelName.split("-")[0];
       var modelHeader = '<b><span style="font-size:14px">' + capitalize(modelNameShort) + ' Model</span></b>';
       // removes "My Model" text from appearing
-      modelHeader = "Results";
+      modelHeader = "";
       
       // Generic tag response models
       if(response.rawData.outputs[0].data.hasOwnProperty("concepts")) {
