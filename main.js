@@ -17,6 +17,9 @@ function validFile(imageName) {
 // array to store strings of the div ids
 var divNames = new Array();
 
+// the current div
+var currentDiv = 0;
+
 $(document).ready( function() {
 	// adds strings of the div ids
 	divNames.push("#main-div");
@@ -34,11 +37,12 @@ $(document).ready( function() {
 	});
 });
 
-// displays divNames[div-num] and hides the rest
+// hides currentDiv, displays divNames[div-num], updates currentDiv
 function displayDiv(num){
 	event.preventDefault();
-	hideAllDivs(divNames);
-	$(divNames[num]).fadeIn(700);
+	$(divNames[currentDiv]).hide();
+	$(divNames[num]).fadeIn();
+	currentDiv = num;
 };
 
 // hide all divs
