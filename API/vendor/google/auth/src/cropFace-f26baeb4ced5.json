@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cropface-187904",
+  "private_key_id": "f26baeb4ced588a60ed069dc7495ea799ebe9382",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDjU59aL81jLCsX\nbVSgSVaj2bnm5sSFtxH0vfQsca3dG5WyruX9DrNiyrXd5We+CRPpUII+gPPP+bQT\nrn8MNBx73k3NC2HG2nhL2W6fefyFZM/lsZykV7YJHroXbo4t40xYhcgHrWZ+gLDr\nZWP6uP2eR0Ix6pRgYyKmPIdapXcvUPqmIYWOM5JuDiF8dfm3UCecJuGl5els4sv+\nlthrTZ4JrM4zI2u2YjimX4EKVsI4BWZjDvzBor8m1tZh5yFn5CcebNrczdNMGExZ\nWkS58rZTpQhlPAHPWSjTAkuaV870TU1h0OeJGzBFItdnZPebs/x4sGy/h6TXHW/a\n5sRCHju/AgMBAAECggEAQHOUCYjmDYkXSpQX2z4Pz3LKj1m8PEEUWTSGBxfP+JF6\nlueZk27Yk1jvyVLiX/HI8GyAEOKUvdGJKc9efAJGVSRJIKpqdWu5kZ+7CoIWg2d6\nvh/mTn4DwYAxuLUCoKYCHlMHzI1wMsuf3Y2olAxg88A2V1qv6MgSqdkdcyjYqtQc\n8kqSlQ2HKB8zBaJHbE9uTOLPqhCmtCQrAEbhvkIbJn+roCACgGQJrIAKwypuop24\nnqydwRbUuUgki6IvS5pPAr0AxakwMddZ1jtU2WPbsTXkEuTacQ+akIf7T4HlUdJ7\nXGLsy95B2at2i42yIBmWUTLR6PIFllIscgiYql/pgQKBgQD4cR2uQuDRpsnKRXKb\n1lWNR8BmLGpy+R0b57SrlNzvkY+Q6Kjz9M8f6DdhD0qUCYCKaT6lkGfrPjKjvBnR\nyrc5eiLMGsPRMhShFUD4+Hj5rI1J7MaaGcoZaAxetjjq7o4Na9ubBdXy+YOuWgpx\nIZkSIpD/Noq9j3Y3VklQYA9J/wKBgQDqPg9HL8RG4TgJDq6l4sIbS/B77k+uUqqn\nhwUygxaZN0eagy2KD5pey0bfapZwxI0b18s8rLWoKeE4iKOC0GtmnxhQVGz85LAV\n07oiLdb33hWlW2qnbnBM2ZKiC350NUEyZEjbY3GUULAB3mH7vX6zPjsM4BOWcUdD\ne2k9cs+OQQKBgQCSnJZKZxcrQcUlg9Q9mL/F7wjggueSz+XYuOUKuH+lNP5HIrXJ\nubedeblsosx9Dhp4E+GvbMeWsI7Lx05pWrrDxYrRbh4OzwITiWpdQqyJksWSUZNm\nD0APvDJIljqCkaLs0rC3DDuU9qA5/NLarlwZsqJkqbg4Y3f88gOz1exP2wKBgC0z\nCHOuDeu3bb6hrKWp2da2kpL3azyyCugEr8YNcYDjH9f61AC9/gWop+ZYhOsBolDr\nFPaCRRNL8X+dLiAB45eLv39Qqy8pWaj8kAAkZESz/+1GdJAWSWkq2paWLTJzTD9T\nBpP+3l3GLBBQPwv6hsZDjdVwL5dqCFxHJgmLa+2BAoGALd9oMgz1xCeoy9nGuJsP\nsfdLRddJI+z4iUYqf8RH1MiAkLI2UIk4bXotBJiuQGchwiaTCA/e/LwmccTzYhJ/\n9wdMq6KUS9nX1P8ACjIcAk8vS44NfrrfptPym29SBRha9EaV+BgAu/ej8Agb/Nmc\nC8pCAZHehsJgVrmdfWgCHDQ=\n-----END PRIVATE KEY-----\n",
+  "client_email": "cropadmin@cropface-187904.iam.gserviceaccount.com",
+  "client_id": "110217355710378281978",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cropadmin%40cropface-187904.iam.gserviceaccount.com"
+}

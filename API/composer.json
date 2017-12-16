@@ -1,0 +1,7 @@
+{
+    "require": {
+        "google/cloud-vision": "^0.7.0",
+        "phpfanatic/clarifai": "^2.0",
+        "google/cloud-storage": "^1.2"
+    }
+}
