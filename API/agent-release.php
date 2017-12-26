@@ -113,7 +113,7 @@
     }
 
     //Functions for analyzing a batch of images of people (awake vs sleeping) 
-    function batchCAnalysis($objList, $infoArray){
+    /*function batchCAnalysis($objList, $infoArray){
         $client = new ImageClient($infoArray['clarfaiAPI']);
         $scoreArr = Array("totalScore" => 0, "totalSleepScore" => 0, "totalEngageScore" => 0, "avgSleepScore" => 0, "avgEngageScore" => 0, "percentSleepScore" => 0, "percentEngageScore" => 0, "imageData" => "");
         $objLsize = sizeof($objList);
@@ -140,8 +140,31 @@
         $scoreArr["percentSleepScore"] = ($scoreArr["totalSleepScore"]/$scoreArr["totalScore"])*100;
         $scoreArr["percentEngageScore"] = ($scoreArr["totalEngageScore"]/$scoreArr["totalScore"])*100;        
         return $scoreArr;
-    }
+    }*/
 
+    function batchCAnalysis($objList, $infoArray){
+        $client = new ImageClient($infoArray['clarfaiAPI']);
+        $scoreArr = Array("info" => Array(), "imageData" => "");
+        $objLsize = sizeof($objList);
+        for ($i=0; $i < $objLsize; $i++) {
+            $imgInfo = $objList[$i];
+            $client->AddImage($imgInfo);
+            $result = $client->Predict($infoArray['clarfaiModelName']);
+            //var_dump($result);
+            $arrResult = (array)((array)(((array)json_decode($result))['outputs'])[0]);
+            $arr2 = (array)(((array)$arrResult['data'])['concepts']);
+            if(strcmp(((array)$arr2[0])['id'],"sleeping")){
+                $engageScore = ((array)$arr2[0])['value'];
+                $sleepyScore = ((array)$arr2[1])['value'];
+            }else{
+                $sleepyScore = ((array)$arr2[0])['value'];
+                $engageScore = ((array)$arr2[1])['value'];
+            }           
+            $tempArr = Array("sleep" => $sleepyScore, "engage" => $engageScore);
+            array_push($scoreArr['info'], $tempArr);
+        }
+        return $scoreArr;
+    }
 
     //A functions that takes in an image and the face vertices and draw rectangles on the image based on the vertices
     function drawFaces($image, $vertices){
@@ -191,9 +214,3 @@
     $result = finalAPI($infoArray);
     echo json_encode($result);
 ?>
-<html>
-<head>
-    <title>Engagement Score Analysis API</title>
-    <!-- <img src="<?php //echo $result["imageData"];?>"> -->
-</head>
-</html>

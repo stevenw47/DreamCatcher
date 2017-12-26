@@ -23,15 +23,6 @@ body {
 	margin: auto;
 }
 
-#results {
-	background-color: white;
-	display: block;
-	border-radius: 5px;
-	width: 30%;
-	margin: auto;
-	padding: 10px;
-}
-
 /*
 . is class
 # is id
