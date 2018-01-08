@@ -73,9 +73,10 @@ function predict_click(value, source){
 		var reader = new FileReader();
 		
 		reader.addEventListener("load", function () {
-			var localBase64 = reader.result.split("base64,")[1];
-			// log the base64 image
-			//console.log(localBase64);
+			// var localBase64 = reader.result.split("base64,")[1];
+			var localBase64 = reader.result;
+			// console.log(reader.result);
+			// console.log(localBase64);
 
 			$.ajax({
 			method: "POST",
