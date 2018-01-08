@@ -1,13 +1,3 @@
-try {
-	var app = new Clarifai.App({
-		apiKey: myApiKey
-	});
-}
-catch(err) {
-	alert("Need a valid API Key!");
-	throw "Invalid API Key";
-}
-
 // Checks for valid image type
 function validFile(imageName) {
 	var lowerImageName = imageName.toLowerCase();
@@ -79,27 +69,39 @@ function predict_click(value, source){
   			dataType: "json"
 		});
 	} else if (source === "file"){
-		console.log("this is the value:");
-		console.log(value);
-		$.ajax({
+		var file = document.querySelector("input[type=file]").files[0];
+		var reader = new FileReader();
+		
+		reader.addEventListener("load", function () {
+			var localBase64 = reader.result.split("base64,")[1];
+			// log the base64 image
+			//console.log(localBase64);
+
+			$.ajax({
 			method: "POST",
-  			url: url,
-  			data: {
-  				imageSource: value
-  			},
-  			success:
-  			function(data){
-  				success(data);
-  			},
-  			error:
-  			function(a,b,c){
-  				console.log("fail");
-  				console.log(a);
-  				console.log(b);
-  				console.log(c);
-  			},
-  			dataType: "json"
+			url: url,
+			data: {
+				imageSource: localBase64
+			},
+			success:
+			function(data){
+				success(data);
+			},
+			error:
+			function(a,b,c){
+				console.log("fail");
+				console.log(a);
+				console.log(b);
+				console.log(c);
+			},
+			dataType: "json"
 		});
+		}, false);
+
+		if (file) {
+			reader.readAsDataURL(file);
+		}
+
 	} else {
 		alert("Invalid source");
 	}
@@ -108,11 +110,9 @@ function predict_click(value, source){
 function success(data){
 	console.log("success");
 
-	console.log(data);
-	console.log(data.imageData);
-	console.log(data.info);
-	console.log(data.info.length);
-	console.log(data.info[0]);
+	//console.log(data);
+	//console.log(data.imageData);
+	//console.log(data.info);
 
 	var numEngaged = 0;
 	var numAsleep = 0;
@@ -129,21 +129,27 @@ function success(data){
 
 	}
 
+	// need to fix this part to have correct grammar in all different cases
 	var html = "";
 	html += "<p>";
-	html += "There are ";
-	if(numEngaged > 0) {
-		html += numEngaged;
-		html += " people engaged";
-		if(numAsleep > 0) {
-			html += " and ";
-		} else {
-			html += ".";
+	if(numEngaged == 1) {
+		html += "There is 1 person engaged";
+	} else {
+		html += "There are ";
+		if(numEngaged > 0) {
+			html += numEngaged;
+			html += " people engaged";
+			if(numAsleep > 0) {
+				html += " and ";
+			} else {
+				html += ".";
+			}
 		}
 	}
+	
 	if(numAsleep > 0) {
 		html += numAsleep;
-		html += "people asleep."
+		html += " people asleep."
 	}
 
 	html += " The accuracy is ";
@@ -152,7 +158,7 @@ function success(data){
 
 	html += "</p>";
 
-	html += '<img style="width: 80%" ';
+	html += '<img style="width: 90%" ';
 	html += 'src="';
 	// image here
 	html += data.imageData;
