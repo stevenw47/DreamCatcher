@@ -48,12 +48,18 @@ function hideAllDivs(divNames){
 // http://www.freepngimg.com/download/happy_person/2-2-happy-person-free-download-png.png
 function predict_click(value, source){
 	var url = "http://18.217.53.24/DreamCatcherAgent/agent-release-raw-v2.php?";
+	var imageType;
 	if(source === "url"){
+		var valSplit = value.split(".");
+		imageType = valSplit[valSplit.length - 1];
+		imageType = imageType.toLowerCase();
+
 		$.ajax({
 			method: "GET",
   			url: url,
   			data: {
-  				imageLink: value
+  				imageLink: value,
+  				imageType: imageType
   			},
   			success:
   			function(data){
@@ -77,12 +83,16 @@ function predict_click(value, source){
 			var localBase64 = reader.result;
 			// console.log(reader.result);
 			// console.log(localBase64);
-
+			imageType = localBase64.split(";base64,")[0];
+			imageType = imageType.split("/")[1];
+			imageType = imageType.toLowerCase();
+			
 			$.ajax({
 			method: "POST",
 			url: url,
 			data: {
-				imageSource: localBase64
+				imageSource: localBase64,
+				imageType: imageType
 			},
 			success:
 			function(data){
