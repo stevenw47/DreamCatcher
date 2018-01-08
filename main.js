@@ -47,8 +47,8 @@ function hideAllDivs(divNames){
 //   GET for url, POST for file
 // http://www.freepngimg.com/download/happy_person/2-2-happy-person-free-download-png.png
 function predict_click(value, source){
+	var url = "http://18.217.53.24/DreamCatcherAgent/agent-release-raw-v2.php?";
 	if(source === "url"){
-		var url = "http://18.217.53.24/DreamCatcherAgent/agent-release-raw-v2.php?";
 		$.ajax({
 			method: "GET",
   			url: url,
