@@ -86,13 +86,13 @@ function predict_click(value, source){
 			imageType = localBase64.split(";base64,")[0];
 			imageType = imageType.split("/")[1];
 			imageType = imageType.toLowerCase();
-			
+			url += "imageType=" + imageType;
+
 			$.ajax({
 			method: "POST",
 			url: url,
 			data: {
-				imageSource: localBase64,
-				imageType: imageType
+				imageSource: localBase64
 			},
 			success:
 			function(data){
@@ -121,7 +121,7 @@ function predict_click(value, source){
 function success(data){
 	console.log("success");
 
-	//console.log(data);
+	console.log(data);
 	//console.log(data.imageData);
 	//console.log(data.info);
 
