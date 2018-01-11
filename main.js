@@ -140,27 +140,44 @@ function success(data){
 
 	}
 
-	// need to fix this part to have correct grammar in all different cases
+	// need to test now
 	var html = "";
 	html += "<p>";
-	if(numEngaged == 1) {
-		html += "There is 1 person engaged";
-	} else {
-		html += "There are ";
-		if(numEngaged > 0) {
+	if(numEngaged >= 1) {
+		html += "There ";
+		if(numEngaged == 1) {
+			html += "is 1 person engaged";
+		} else {
+			html += "are ";
 			html += numEngaged;
 			html += " people engaged";
-			if(numAsleep > 0) {
-				html += " and ";
-			} else {
-				html += ".";
-			}
 		}
 	}
-	
-	if(numAsleep > 0) {
-		html += numAsleep;
-		html += " people asleep."
+
+	if(numAsleep == 0) {
+		if(numEngaged == 0) {
+			html += "There was no person detected in this photo :(.";
+		} else {
+			html += ".";
+		}
+	} else {
+		if(numEngaged >= 1) {
+			html += " and ";
+		} else {
+			html += "There ";
+			if(numAsleep == 1) {
+				html += "is ";
+			} else {
+				html += "are ";
+			}
+		}
+		if(numAsleep == 1) {
+			html += "1 person";
+		} else {
+			html += numAsleep;
+			html += " people";
+		}
+		html += " asleep.";
 	}
 
 	html += " The accuracy is ";
